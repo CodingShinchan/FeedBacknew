@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register a Complaint</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f9fb;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px 40px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #444;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    input[type="submit"] {
+      background-color: #0070d2;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin-top: 20px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #005bb5;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Register a Complaint</h2>
+
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DgK000004BxNR" method="POST">
+      <input type="hidden" name="orgid" value="00DgK000004BxNR">
+      <input type="hidden" name="retURL" value="http://">
+
+      <label for="name">Contact Name</label>
+      <input id="name" maxlength="80" name="name" type="text" required>
+
+      <label for="email">Email</label>
+      <input id="email" maxlength="80" name="email" type="email" required>
+
+      <label for="phone">Phone</label>
+      <input id="phone" maxlength="40" name="phone" type="tel" required>
+
+      <label for="subject">Subject</label>
+      <input id="subject" maxlength="80" name="subject" type="text" required>
+
+      <label for="description">Description</label>
+      <textarea name="description" required></textarea>
+
+      <label for="priority">Priority</label>
+      <select id="priority" name="priority" required>
+        <option value="">-- Select --</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>
